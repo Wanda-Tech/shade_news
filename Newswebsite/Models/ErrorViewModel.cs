@@ -1,4 +1,4 @@
-namespace Newswebsite.Models
+namespace NewsWebsite.Models
 {
     public class ErrorViewModel
     {

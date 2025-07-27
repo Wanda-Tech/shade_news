@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+
 
 namespace contactForm.Pages.Shared
 {
@@ -69,26 +70,24 @@ namespace contactForm.Pages.Shared
                 try
                 {
                     string connectionString = "Data Source=Shadow;Initial Catalog =portfolio_db ;Integrated Security=True;TrustServerCertificate =True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        string sql = "INSERT INTO messages " +
-                            "(firstname, lastname, email, phone, subject, message) VALUES " +
-                            "(@firstname, @lastname, @email, @phone, @subject, @message);";
+                using SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                string sql = "INSERT INTO messages " +
+                    "(firstname, lastname, email, phone, subject, message) VALUES " +
+                    "(@firstname, @lastname, @email, @phone, @subject, @message);";
 
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            command.Parameters.AddWithValue("@firstname", FirstName);
-                            command.Parameters.AddWithValue("@lastname", LastName);
-                            command.Parameters.AddWithValue("@email", Email);
-                            command.Parameters.AddWithValue("@phone", Phone);
-                            command.Parameters.AddWithValue("@subject", Subject);
-                            command.Parameters.AddWithValue("@message", Message);
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@firstname", FirstName);
+                    command.Parameters.AddWithValue("@lastname", LastName);
+                    command.Parameters.AddWithValue("@email", Email);
+                    command.Parameters.AddWithValue("@phone", Phone);
+                    command.Parameters.AddWithValue("@subject", Subject);
+                    command.Parameters.AddWithValue("@message", Message);
 
-                            command.ExecuteNonQuery();
-                        }
-                    }
+                    command.ExecuteNonQuery();
                 }
+            }
                 catch (Exception ex)
                 {
                     // Error

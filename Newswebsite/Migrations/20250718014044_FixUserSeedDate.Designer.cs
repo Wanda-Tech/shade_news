@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Newswebsite.Data;
+using NewsWebsite.Data;
 
 #nullable disable
 
-namespace Newswebsite.Migrations
+namespace NewsWebsite.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
     [Migration("20250718014044_FixUserSeedDate")]

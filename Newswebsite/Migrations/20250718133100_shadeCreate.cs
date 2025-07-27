@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace NewsWebsite.Migrations
 {
     /// <inheritdoc />
-    public partial class FixUserSeedDate : Migration
+    public partial class shadeCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,8 +14,8 @@ namespace NewsWebsite.Migrations
                 table: "Users",
                 keyColumn: "user_id",
                 keyValue: 1,
-                column: "created",
-                value: new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+                column: "email",
+                value: "fonutchi87@gmail.com");
         }
 
         /// <inheritdoc />
@@ -26,8 +25,8 @@ namespace NewsWebsite.Migrations
                 table: "Users",
                 keyColumn: "user_id",
                 keyValue: 1,
-                column: "created",
-                value: new DateTime(2025, 7, 18, 1, 25, 47, 824, DateTimeKind.Utc).AddTicks(4164));
+                column: "email",
+                value: "fonutchi87@gmail.com");
         }
     }
 }

@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Newswebsite.Models;
+using NewsWebsite.Models;
 
-namespace Newswebsite.Controllers
+namespace NewsWebsite.Controllers
 {
     public class HomeController : Controller
     {

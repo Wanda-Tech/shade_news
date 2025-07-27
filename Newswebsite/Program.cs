@@ -1,4 +1,4 @@
-﻿using Newswebsite.Data; // Your DbContext namespace
+﻿using NewsWebsite.Data; // Your DbContext namespace
 using Microsoft.EntityFrameworkCore; // For Entity Framework Core
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,7 +1,6 @@
-﻿using Newswebsite.Models;// Your entity models
-using Microsoft.EntityFrameworkCore; // Main EF Core namespace
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Newswebsite.Data
+namespace NewsWebsite.Data
 {
     // DbContext: The main class that coordinates Entity Framework functionality for a data model
     public class NewsDbContext : DbContext
@@ -118,7 +117,7 @@ namespace Newswebsite.Data
                 {
                     UserId = 1,
                     UserName = "admin",
-                    Email = "admin@affaznews.com",
+                    Email = "fonutchi87@gmail.com",
                     Phone = "1234567890",
                     Password = "admin123", // 🔐 Should be hashed in production
                     Created = new DateTime(2024, 01, 01, 00, 00, 00, DateTimeKind.Utc)

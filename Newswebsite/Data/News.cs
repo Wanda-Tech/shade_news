@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations; // For validation attributes
 using System.ComponentModel.DataAnnotations.Schema; // For database schema attributes
 
-namespace Newswebsite.Models
+namespace NewsWebsite.Data
 {
     public class News
     {
@@ -14,12 +14,12 @@ namespace Newswebsite.Models
         [Required(ErrorMessage = "Title is required")]
         [StringLength(100, ErrorMessage = "Title cannot exceed 100 characters")]
         [Column("title")]
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
         // Content of the news article - using TEXT data type in SQL Server
         [Required(ErrorMessage = "Content is required")]
         [Column("content", TypeName = "TEXT")] // Specifies SQL Server data type
-        public string Content { get; set; }
+        public required string Content { get; set; }
 
         // When the news was created - can be null
         [Column("createdDate")]
